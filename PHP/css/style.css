@@ -1,0 +1,18 @@
+body {
+  position: relative;
+}
+.container {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 1200px;
+  box-sizing: content-box;
+}
+.titleHeader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+table {
+  width: 100%;
+}
