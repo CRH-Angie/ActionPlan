@@ -13,9 +13,16 @@
   <script src="js/addProd.js"></script>
 </head>
 <body>
-<?php include 'includes/header.php'; ?>
-<?php include 'crud/connection.php'; ?>
-<?php include 'crud/addProd.php'; ?>
+<?php 
+  include_once 'crud/connection.php'; 
+  include 'includes/header.php'; 
+  include 'crud/addProd.php'; 
+  $con = connection(); 
+  $sql = "SELECT * FROM Product";
+  $prod = $con->query($sql) or die ($con->error);
+  $row = $prod->fetch_assoc();
+?>
+
 <div class="container">
   <div class="titleHeader">
     <h2>CRUD</h2>
@@ -30,11 +37,17 @@
       </tr>
     </th>
     <tbody>
+      <?php 
+        do { 
+      ?>
       <tr>
-        <td>Sample</td>
-        <td>Sample Description</td>
+        <td><?php echo $row['Product']; ?></td>
+        <td><?php echo $row['Description']; ?></td>
         <td class="action"><span><button>Edit</button></span> <span><button>Delete</button></span></td>
       </tr>
+      <?php 
+        } while($row = $prod->fetch_assoc())
+      ?>
     </tbody>
   </table>
 </div>

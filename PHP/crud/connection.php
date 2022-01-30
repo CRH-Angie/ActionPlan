@@ -1,23 +1,26 @@
 <?php
+function connection() {
   $servername = "localhost";
   $username = "root";
   $password = "";
   $dbname = "PHP DB";
 
   // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
+  $con = new mysqli($servername, $username, $password, $dbname);
   // Check connection
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+  if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);
+  } else {
+    return $con;
   }
 
   // $sql = "INSERT INTO Product (product, description) VALUES ('Test', 'Test 1')";
 
-  // if ($conn->query($sql) === TRUE) {
+  // if ($con->query($sql) === TRUE) {
   //   echo "New record created successfully";
   // } else {
-  //   echo "Error: " . $sql . "<br>" . $conn->error;
+  //   echo "Error: " . $sql . "<br>" . $con->error;
   // }
 
-  $conn->close();
-?>
+  // $con ->close();
+}
