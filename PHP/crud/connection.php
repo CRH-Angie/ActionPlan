@@ -13,14 +13,4 @@ function connection() {
   } else {
     return $con;
   }
-
-  // $sql = "INSERT INTO Product (product, description) VALUES ('Test', 'Test 1')";
-
-  // if ($con->query($sql) === TRUE) {
-  //   echo "New record created successfully";
-  // } else {
-  //   echo "Error: " . $sql . "<br>" . $con->error;
-  // }
-
-  // $con ->close();
 }
