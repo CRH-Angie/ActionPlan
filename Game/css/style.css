@@ -81,7 +81,7 @@ h1 {
   background: #d34d64;
 }
 #try span {
-  display: block;
+  margin-right: 5px;
 }
 #word-lines {
   margin: 0px 0px 6px 15px;

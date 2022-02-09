@@ -54,8 +54,6 @@ $(document).on("click",".modal-button", function (e) {
         if (wordLine[i] == substring) {
           var a = i+1;
           $('.open #word-lines .line:nth-child('+a+')').text(substring);
-          console.log(wordLine[i]);
-          console.log("i=",a)
         }
       }
       $(".modal.open .tries #try").append('<span>'+substring+'</span>'); //add Hint letter

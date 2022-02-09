@@ -263,7 +263,7 @@
           <div class="team2">Team 2: <span>0</span></div>
         </div>
         <p id="lives"></p>
-        <div class="tries"><div id="try">Tries: In every hint you will lose 10 points. </div></div>
+        <div class="tries"><div id="try">Tries: In every hint you will lose 10 points.<br><br>You've tried:  </div></div>
         <div class="buttons flex">
           <div class="show"><button>Show</button></div>
           <!-- <div class="wrong"><button data-point="-100">X</button></div>
@@ -289,7 +289,7 @@
         </div>
 
         <p id="lives"></p>
-        <div class="tries"><div id="try">Tries: In every hint you will lose 10 points. </div></div>
+        <div class="tries"><div id="try">Tries: In every hint you will lose 10 points.<br><br>You've tried:  </div></div>
         <div class="buttons flex">
           <div class="show"><button>Show</button></div>
           <!-- <div class="wrong"><button data-point="-200">X</button></div>
@@ -315,7 +315,7 @@
         </div>
 
         <p id="lives"></p>
-        <div class="tries"><div id="try">Tries: In every hint you will lose 10 points. </div></div>
+        <div class="tries"><div id="try">Tries: In every hint you will lose 10 points.<br><br>You've tried:  </div></div>
         <div class="buttons flex">
           <div class="show"><button>Show</button></div>
           <!-- <div class="wrong"><button data-point="-300">X</button></div>
@@ -341,7 +341,7 @@
         </div>
 
         <p id="lives"></p>
-        <div class="tries"><div id="try">Tries: In every hint you will lose 10 points. </div></div>
+        <div class="tries"><div id="try">Tries: In every hint you will lose 10 points.<br><br>You've tried:  </div></div>
         <div class="buttons flex">
           <div class="show"><button>Show</button></div>
           <!-- <div class="wrong"><button data-point="-400">X</button></div>
@@ -367,7 +367,7 @@
         </div>
 
         <p id="lives"></p>
-        <div class="tries"><div id="try">Tries: In every hint you will lose 10 points. </div></div>
+        <div class="tries"><div id="try">Tries: In every hint you will lose 10 points.<br><br>You've tried:  </div></div>
         <div class="buttons flex">
           <div class="show"><button>Show</button></div>
           <!-- <div class="wrong"><button data-point="-500">X</button></div>
