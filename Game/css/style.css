@@ -1,0 +1,170 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+h1 {
+  font-size: 56px;
+  font-weight: 700;
+  text-align: center;
+  margin: 25px auto;
+}
+.choices li {
+  width: calc(100% / 5);
+}
+.choices li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 25px 15px;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  border: 1px solid;
+}
+.choices .first {
+  background: blue;
+}
+.choices .second {
+  background: green;
+}
+.choices .third {
+  background: yellow;
+}
+.choices .fourth {
+  background: orange;
+}
+.choices .fifth {
+  background: red;
+}
+.guess i {
+  font-style: italic;
+}
+.point {
+  font-size: 34px;
+  font-weight: 600;
+  position: absolute;
+  right: 50px;
+}
+.point:after {
+  position: absolute;
+  content: 'pts';
+}
+.answer {
+  margin: 10px 0;
+}
+.answer.hide {
+  display: none;
+}
+.buttons.flex {
+  justify-content: right;
+  padding-top: 5px;
+}
+.buttons button {
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  color: white;
+  background: green;
+  border: 0px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+.buttons .wrong button {
+  background: red;
+  margin: 0px 7px;
+}
+.buttons.flex .show button {
+  width: auto;
+  padding: 0 10px;
+  background: #d34d64;
+}
+#try span {
+  display: block;
+}
+#word-lines {
+  margin: 0px 0px 6px 15px;
+}
+#word-lines .line {
+  border-bottom: 1px solid;
+  margin-right: 6px;
+  width: 20px;
+  display: inline-block;
+}
+.modal.open div:nth-of-type(3) {
+  align-items: end;
+}
+
+/* start of Modal */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.innerContainer {
+  background: white;
+  padding: 50px;
+  font-size: 24px;
+  align-items: center;
+  display: grid;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+.teampoints {
+  position: absolute;
+  right: 50px;
+  font-size: 22px;
+}
+.team {
+  display: grid;
+  justify-content: right;
+  padding: 25px;
+  font-size: 24px;    
+  text-align: right;
+  grid-gap: 10px;
+}
+.team h2 {
+  font-size: 30px;
+}
+.team div {
+  cursor: pointer;
+}
+.team .selected {
+  color: green;
+}
+
+.modal .flex {
+  position: relative;
+}
+.modal .flex h2 {
+  margin-right: 100px;
+}
+.modal input {
+  outline: none;
+  padding: 10px;
+  width: 25%;
+  margin: 10px 0px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+/* End of modal */
