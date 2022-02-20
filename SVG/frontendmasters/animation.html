@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple SVG animation</title>
+    <link rel="stylesheet" href="../css/animation.css" />
+  </head>
+  <body>
+    <div>
+      <h2>Chart Bar</h2>
+      <div>
+        <svg class="chartBar" viewBox="0 0 200 200">
+          <path
+            stroke="black"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1"
+            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <div>
+      <h2>Check</h2>
+      <div>
+        <svg viewBox="0 0 200 200">
+          <path
+            fill="none"
+            class="check"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1"
+            d="M5 13l4 4L19 7"
+          ></path>
+        </svg>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+{% for item in module.event %}
+	{% for item2 in item.logo_image %}
+		{% if item2.src %}
+			{% set sizeAttrs = 'width="{{ item2.width }}" height="{{ item2.height }}"' %}
+			{% if item2.size_type == 'auto' %}
+				{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+			{% elif item2.size_type == 'auto_custom_max' %}
+				{% set sizeAttrs = 'width="{{ item2.max_width }}" height="{{ item2.max_height }}" style="max-width: 100%; height: auto;"' %}
+			{% endif %}
+			 {% set loadingAttr = item2.loading != 'disabled' ? 'loading="{{ item2.loading }}"' : '' %}
+			<img src="{{ item2.src }}" alt="{{ item2.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+		{% endif %}
+	{% endfor %}
+	{% inline_text field="suptitle" value="{{ item.suptitle }}" %}
+	{% inline_text field="title" value="{{ item.title }}" %}
+	{% inline_text field="date_of_event_and_time" value="{{ item.date_of_event_and_time }}" %}
+	{% if item.image.src %}
+		{% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+		{% if item.image.size_type == 'auto' %}
+			{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+		{% elif item.image.size_type == 'auto_custom_max' %}
+			{% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+		{% endif %}
+		 {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+		<img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+	{% endif %}
+	{% if item.image_sp.src %}
+		{% set sizeAttrs = 'width="{{ item.image_sp.width }}" height="{{ item.image_sp.height }}"' %}
+		{% if item.image_sp.size_type == 'auto' %}
+			{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+		{% elif item.image_sp.size_type == 'auto_custom_max' %}
+			{% set sizeAttrs = 'width="{{ item.image_sp.max_width }}" height="{{ item.image_sp.max_height }}" style="max-width: 100%; height: auto;"' %}
+		{% endif %}
+		 {% set loadingAttr = item.image_sp.loading != 'disabled' ? 'loading="{{ item.image_sp.loading }}"' : '' %}
+		<img src="{{ item.image_sp.src }}" alt="{{ item.image_sp.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+	{% endif %}
+{% endfor %}
