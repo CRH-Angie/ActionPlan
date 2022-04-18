@@ -1,0 +1,37 @@
+.keyvisual {
+    padding: 80px 40px;
+    color: var(--white);
+    overflow: hidden;
+}
+.keyvisual .container {
+    max-width: 1400px;
+    text-align: center;
+}
+.keyvisual h1 {
+    font-weight: 700;
+    font-size: clamp(24px, 10vw, 40px);
+    line-height: 1.5;
+    text-shadow: 2px 2px 5px var(--black);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.keyvisual p {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.75;
+    margin-top: 20px;
+    text-shadow: 1px 1px 5px var(--black);
+    font-family: 'Courier New', Courier, monospace;
+}
+.keyvisual--typing {
+    background: var(--aqua) url('../images/aquamarine.jpeg');
+    background-position: center;
+}
+.keyvisual--typing h1 {
+    --typing-steps: 12;
+    overflow: hidden;
+    white-space: nowrap; 
+    letter-spacing: 3px;
+    border-right: 3px solid #9778d7;
+    animation: typing 2s steps(var(--typing-steps)),
+        blinking 0.7s steps(1) infinite;
+}

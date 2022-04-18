@@ -1,0 +1,18 @@
+@keyframes typing {
+    0% {
+      width: 0px;
+    }
+    100% {
+      width: 100%;
+    }
+}
+  
+@keyframes blinking {
+    0%,
+    100% {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #9778d7;
+    }
+}
