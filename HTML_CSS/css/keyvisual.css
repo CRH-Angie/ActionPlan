@@ -8,30 +8,52 @@
     text-align: center;
 }
 .keyvisual h1 {
-    font-weight: 700;
-    font-size: clamp(24px, 10vw, 40px);
-    line-height: 1.5;
-    text-shadow: 2px 2px 5px var(--black);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    font-size: clamp(40px, 40vw, 60px);
 }
 .keyvisual p {
     font-weight: 400;
     font-size: 24px;
-    line-height: 1.75;
     margin-top: 20px;
-    text-shadow: 1px 1px 5px var(--black);
-    font-family: 'Courier New', Courier, monospace;
 }
 .keyvisual--typing {
-    background: var(--aqua) url('../images/aquamarine.jpeg');
+    background: var(--darker-aqua);
     background-position: center;
 }
+.keyvisual--typing .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .keyvisual--typing h1 {
-    --typing-steps: 12;
+    display: inline-flex;
+}
+.dynamic-txt {
+    color: var(--aqua);
+    font-weight: 500;
+    font-size: clamp(40px, 40vw, 60px);
+    text-align: left;
+    margin-left: 20px;
+    height: 65px;
     overflow: hidden;
-    white-space: nowrap; 
-    letter-spacing: 3px;
-    border-right: 3px solid #9778d7;
-    animation: typing 2s steps(var(--typing-steps)),
-        blinking 0.7s steps(1) infinite;
+}
+.dynamic-txt li {
+    top: 0;
+    margin-bottom: 15px;
+    animation: moveTextUp 3s steps(3) infinite;
+}
+.dynamic-txt li,
+.dynamic-txt li span {
+    position: relative;
+}
+.dynamic-txt li span::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background: var(--darker-aqua);
+    border-left: 2px solid;
+    animation: typing 1s steps(12) infinite;
 }
