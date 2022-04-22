@@ -4,8 +4,16 @@
     margin-left: 15px;
   }
 }
+@keyframes typing2 {
+  0% {width: 0%;}
+  100% {width: 100%;}
+}
 @keyframes moveTextUp {
   100% {
-    top: -223px;
+    top: -226px;
   }
+}
+@keyframes blink {
+  from, to {border-color: transparent;}
+  50% {border-color: var(--lighter-aqua);}
 }

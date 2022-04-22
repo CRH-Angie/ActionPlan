@@ -16,15 +16,14 @@
     font-size: 24px;
     margin-top: 20px;
 }
+
+/* keyvisual--typing */
 .keyvisual--typing {
     background: var(--darker-aqua);
     background-position: center;
 }
 .keyvisual--typing .container {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 .keyvisual--typing h1 {
     display: inline-flex;
@@ -56,4 +55,17 @@
     background: var(--darker-aqua);
     border-left: 2px solid;
     animation: typing 1s steps(12) infinite;
+}
+
+/* keyvisual--typing-2 */
+.keyvisual--typing-2 {
+    background: var(--darker-aqua);
+}
+.keyvisual--typing-2 h1 span {
+    animation: typing2 3.5s steps(21) forwards,
+                blink .75s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    border-right: 1px solid var(--aqua);
 }
