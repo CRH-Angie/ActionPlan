@@ -17,3 +17,8 @@
   from, to {border-color: transparent;}
   50% {border-color: var(--lighter-aqua);}
 }
+@keyframes toLeft {
+  50% {
+    transform: translate(-30%, 0) scale(1, 1);
+  }
+}

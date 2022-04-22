@@ -1,6 +1,12 @@
-.wave1 {
-    fill: var(--aqua);
+.wave {
+    height: 320px;
+    width: 100%;
 }
-.wave2 {
+.wave--1 {
     fill: var(--lighter-aqua);
+    animation: toLeft 5s ease-in infinite;
+}
+.wave--2 {
+    fill: var(--aqua);
+    animation: toLeft 8s ease infinite;
 }
