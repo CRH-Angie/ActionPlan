@@ -28,34 +28,6 @@
 .keyvisual--typing h1 {
     display: inline-flex;
 }
-.dynamic-txt {
-    color: var(--aqua);
-    font-weight: 500;
-    font-size: clamp(40px, 40vw, 60px);
-    text-align: left;
-    margin-left: 20px;
-    height: 65px;
-    overflow: hidden;
-}
-.dynamic-txt li {
-    top: 0;
-    margin-bottom: 15px;
-    animation: moveTextUp 3s steps(3) infinite;
-}
-.dynamic-txt li,
-.dynamic-txt li span {
-    position: relative;
-}
-.dynamic-txt li span::after {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    background: var(--darker-aqua);
-    border-left: 2px solid;
-    animation: typing 1s steps(12) infinite;
-}
 
 /* keyvisual--typing-2 */
 .keyvisual--typing-2 {
