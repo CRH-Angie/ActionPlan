@@ -1,0 +1,43 @@
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+}
+.col--2 {
+    flex-basis: calc((100% - 40px) / 2);
+}
+.col--2:not(:last-of-type) {
+    margin-right: 40px;
+}
+.col--3 {
+    flex-basis: calc((100% - 80px) / 3);
+}
+.col--3:not(:last-of-type) {
+    margin-right: 40px;
+}
+.col--4 {
+    flex-basis: calc((100% - 120px) / 4);
+}
+.col--4:not(:last-of-type) {
+    margin-right: 30px;
+}
+.col__bg {
+    background: var(--white);
+    padding: 10px;
+    box-sizing: border-box;
+}
+.col__title {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.col__bar {
+    background: white;
+    padding: 8px 10px;
+    color: darkcyan;
+    margin-bottom: 15px;
+}
+.col__bar--outset {
+    border: 2px outset white;
+    margin: -10px -10px 15px;
+}

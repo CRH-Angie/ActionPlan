@@ -1,0 +1,8 @@
+h2 {
+    color: var(--azure);
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 36px;
+    border-bottom: 1px solid;
+    padding-bottom: 3px;
+}

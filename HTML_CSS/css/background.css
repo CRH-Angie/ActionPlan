@@ -1,0 +1,12 @@
+.bg--pink,
+.col__bg--pink {
+    background-color: var(--pink);
+}
+.bg--lavender,
+.col__bg--lavender {
+    background-color: var(--lavender);
+}
+.bg--lightseagreen,
+.col__bg--lightseagreen {
+    background-color: var(--lightseagreen);
+}
