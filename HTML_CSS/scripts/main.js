@@ -17,6 +17,6 @@ function addition(num1, num2) {
 function newText(txt) {
     return txt;
 }
-document.querySelector('html').addEventListener('click', function() {
+document.querySelector('html').addEventListener('click', () => {
     alert('stop clicking!');
 })
