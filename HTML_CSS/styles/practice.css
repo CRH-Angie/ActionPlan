@@ -15,7 +15,8 @@ a {
 }
 img {
     margin: 0 auto;
-    max-width: 600px;
+    width: 600px;
+    height: 448px;
     display: block;
     border: 2px inset white;
 }

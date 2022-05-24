@@ -1,4 +1,4 @@
-const myHeading = document.querySelector('h1');
+/*const myHeading = document.querySelector('h1');
 myHeading.textContent = 'Hello world!';
 
 let cake = 'chocolate';
@@ -19,4 +19,15 @@ function newText(txt) {
 }
 document.querySelector('html').addEventListener('click', () => {
     alert('stop clicking!');
-})
+});
+*/
+let myImage = document.querySelector('img');
+
+myImage.onclick = function() {
+    let imgSrc = myImage.getAttribute('src');
+    if(imgSrc === 'images/lorem-ipsum.jpeg') {
+        myImage.setAttribute('src', 'images/lorem-ipsum2.jpeg');
+    } else {
+        myImage.setAttribute('src', 'images/lorem-ipsum.jpeg');
+    }
+}
