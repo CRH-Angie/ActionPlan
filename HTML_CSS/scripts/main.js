@@ -31,3 +31,22 @@ myImage.onclick = function() {
         myImage.setAttribute('src', 'images/lorem-ipsum.jpeg');
     }
 }
+
+let btn = document.querySelector('button');
+let heading = document.querySelector('h1');
+
+function setUserName() {
+    let username = prompt('Please enter your name...');
+    localStorage.setItem('name', username);
+    heading.textContent = 'Hello '+username;
+
+    if (!localStorage.getItem('name')) {
+        setUserName();
+    } else {
+        let storedName = localStorage.getItem('name');
+        heading.textContent = 'Hello '+username;
+    }
+}
+btn.onclick = ()=> {
+    setUserName();
+}
