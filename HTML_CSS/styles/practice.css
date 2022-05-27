@@ -1,9 +1,10 @@
 body {
     color: white;
     background-color: blue;
+    max-width: 600px;
+    margin: 0 auto;
 }
 div {
-    max-width: 600px;
     margin: 40px auto 0px;
 }
 h1 {

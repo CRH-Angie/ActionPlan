@@ -37,13 +37,12 @@ let heading = document.querySelector('h1');
 
 function setUserName() {
     let username = prompt('Please enter your name...');
-    localStorage.setItem('name', username);
-    heading.textContent = 'Hello '+username;
+    // localStorage.setItem('name', username);
 
-    if (!localStorage.getItem('name')) {
+    if (!username) {
         setUserName();
     } else {
-        let storedName = localStorage.getItem('name');
+        localStorage.setItem('name', username);
         heading.textContent = 'Hello '+username;
     }
 }
