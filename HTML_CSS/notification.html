@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification</title>
+    <style>
+        ::marker {
+            font-size: 24px;
+            color: #2e8fd2;
+        }
+        .notification {
+            max-width: 450px;
+            box-shadow: 1px 1px 3px gray;
+            padding: 20px;
+        }
+        .notification__header {
+            display: flex;
+            justify-content: space-between;
+        }
+        .notification__list {
+            padding: 0px 0px 0px 15px;
+        }
+        .notification__list-item {
+            margin-bottom: 15px;
+            padding-left: 5px;
+        }
+        .notification .content span {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="notification">
+        <div class="notification__header">
+            <span>Notifications</span>
+            <span><a href=""><i class="icon icon--check"></i>Mark as read</a></span>
+        </div>
+        <ul class="notification__list">
+            <li class="notification__list-item">
+                <a href="">
+                    <p>
+                        <span class="title">There is a new updated version of our software available</span>
+                        <span class="date">Sep 14, 2021 at 10:11 AM</span>
+                    </p>
+                    <i class="icon icon--info">i</i>
+                </a>
+            </li>
+            <li class="notification__list-item last-item">
+                <a href="">
+                    <p class="content">
+                        <span class="title">You have a new message</span>
+                        <span class="date">Sep 14, 2021 at 10:11 AM</span>
+                    </p>
+                    <i class="icon icon--message">i</i>
+                </a>
+                <a class="view-all" href="">View all notifications</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
