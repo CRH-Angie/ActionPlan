@@ -1,0 +1,38 @@
+.icon {
+    width: 25px;
+    height: auto;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.icon--check {
+    padding-left: 25px;
+    background-image: url('../images/svg/double-check.svg');
+}
+.icon--info {
+    height: 25px;
+    padding: 10px;
+    border-radius: 50%;
+    background-size: 80%;
+    background-color: #10619a;
+    background-position: center;
+    background-image: url('../images/svg/info.svg');
+}
+.icon--message {
+    height: 25px;
+    padding: 10px;
+    border-radius: 50%;
+    background-size: 65%;
+    background-color: #10619a;
+    background-position: center;
+    background-image: url('../images/svg/message.svg');
+}
+.icon--person {
+    height: 25px;
+    padding: 10px;
+    border-radius: 50%;
+    background-size: 80%;
+    background-color: #10619a;
+    background-position: center;
+    background-image: url('../images/svg/person.svg');
+}

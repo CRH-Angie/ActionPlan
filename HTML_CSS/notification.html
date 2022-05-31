@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/icon.css">
     <title>Notification</title>
     <style>
         ::marker {
             font-size: 24px;
-            color: #2e8fd2;
+            color: #10619a;
         }
         .notification {
             max-width: 450px;
@@ -23,11 +24,46 @@
             padding: 0px 0px 0px 15px;
         }
         .notification__list-item {
-            margin-bottom: 15px;
             padding-left: 5px;
+        }
+        .notification__list-item a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .notification__list-item a p {
+            flex-basis: 83%;
+        }
+        .notification__list-item a span {
+            display: block;
+        }
+        .notification__list-item a .icon {
+            margin-left: 30px;
         }
         .notification .content span {
             display: block;
+        }
+        .notification a {
+            color: rgb(49, 48, 48);
+            text-decoration: none;
+        }
+        .mark-read a,
+        .notification a:hover {
+            color: #2e8fd2;
+        }
+        .date {
+            color: rgb(142, 139, 139);
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .notification a.view-all {
+            color: #2e8fd2;
+            margin-top: 10px;
+            border-top: 2px solid rgb(135, 132, 132);
+            padding-top: 10px;
+            text-decoration: underline;
+            font-size: 16px;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -35,7 +71,7 @@
     <div class="notification">
         <div class="notification__header">
             <span>Notifications</span>
-            <span><a href=""><i class="icon icon--check"></i>Mark as read</a></span>
+            <span class="mark-read"><a href="" class="icon icon--check">Mark as read</a></span>
         </div>
         <ul class="notification__list">
             <li class="notification__list-item">
@@ -44,7 +80,16 @@
                         <span class="title">There is a new updated version of our software available</span>
                         <span class="date">Sep 14, 2021 at 10:11 AM</span>
                     </p>
-                    <i class="icon icon--info">i</i>
+                    <i class="icon icon--info"></i>
+                </a>
+            </li>
+            <li class="notification__list-item">
+                <a href="">
+                    <p>
+                        <span class="title">There is a new updated version of our software available available available available</span>
+                        <span class="date">Sep 14, 2021 at 10:11 AM</span>
+                    </p>
+                    <i class="icon icon--person"></i>
                 </a>
             </li>
             <li class="notification__list-item last-item">
@@ -53,7 +98,7 @@
                         <span class="title">You have a new message</span>
                         <span class="date">Sep 14, 2021 at 10:11 AM</span>
                     </p>
-                    <i class="icon icon--message">i</i>
+                    <i class="icon icon--message"></i>
                 </a>
                 <a class="view-all" href="">View all notifications</a>
             </li>
