@@ -1,0 +1,14 @@
+.keyvisual {
+    margin: 0 auto;
+    padding: 50px 40px;
+    background-color: #0099ff;
+    background-image: url('../images/curve.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.keyvisual h1 {
+    color: aliceblue;
+    font-size: 50px;
+    font-weight: 700;
+}
