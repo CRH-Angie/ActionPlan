@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flexbox-wrapper {
+        display: flex;
+        height: 90vh;  
+        overflow: auto;
+        background: pink;  
+        justify-content: center;
+        border: 2px solid white;
+        }
+        .sub-item {
+        background-color: blue;
+        height: 130vh;  
+        }
+        .main {
+        position: -webkit-sticky; /* for Safari */
+        position: sticky;
+        top: 0;
+        height: 80vh;  
+        width: 25%;
+        align-self: flex-start; /* <-- this is the fix */
+        background-color: red;  /* Not necessary -- for example only */
+        }
+        .sub-item {
+            width: 50%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+        .col-2 {
+            border: 1px solid;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="flexbox-wrapper">
+        parent
+        <div class="main">
+            This is the sticky box
+        </div>
+        <div class="sub-item">
+            <div class="col-2">This is the sub-item box</div>
+            <div class="col-2">This is the sub-item box</div>
+            <div class="col-2">This is the sub-item box</div>
+            <div class="col-2">This is the sub-item box</div>
+            <div class="col-2">This is the sub-item box</div>
+            <div class="col-2">This is the sub-item box</div>
+        </div>
+    </div>
+    <div class="flexbox-wrapper">
+        parent
+
+        <div class="main">
+            This is the sticky box
+        </div>
+        <div class="sub-item">
+            <div class="col-2">This is the sub-item box</div>
+            <div class="col-2">This is the sub-item box</div>
+            <div class="col-2">This is the sub-item box</div>
+            <div class="col-2">This is the sub-item box</div>
+            <div class="col-2">This is the sub-item box</div>
+            <div class="col-2">This is the sub-item box</div>
+        </div>
+    </div>
+</body>
+</html>
