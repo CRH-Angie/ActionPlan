@@ -24,6 +24,27 @@
     grid-column: 1;
     grid-row: 1/span 2;
 }
+.countryList ul li {
+    text-align: center;
+}
+.countryList ul li a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+}
+.countryList ul li a:hover,
+.countryList ul li a:active {
+    font-weight: 700;
+    color: red;
+    text-decoration: none;
+}
+.countryList ul {
+    padding: 0;
+    list-style: none;
+}
 .country__container .countryDescription {
     grid-column: 2;
     grid-row: 1;

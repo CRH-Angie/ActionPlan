@@ -6,13 +6,13 @@ import CountryList from './CountryList'
 class App extends Component {
   render() {
     return (
-      <div className="country">
+        <div className="country">
         <div className='country__container'>
-          <CountryList />
-          <CountryDescription />
-          <CountryDetails />
+            <CountryList />
+            <CountryDescription />
+            <CountryDetails />
         </div>
-      </div>
+        </div>
     )
   }
 }
