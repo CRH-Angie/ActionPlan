@@ -30,3 +30,11 @@ function hideShowText() {
     document.getElementById('hideShowText').innerHTML = 'Hide this text';
   }
 }
+// alert('hello world!');
+document.getElementById('button').onclick = function(){
+  document.getElementById('confirm').innerHTML = 'Order Placed. Check email for confirmation';
+  document.getElementById('button').style.display='none';
+}
+
+// var username = prompt();
+// console.log(username)
