@@ -49,7 +49,7 @@ document.getElementById('button').onclick = function(){
 }());
 
 //this is an easier way of creating IIFE
-{
+{ // block; 
   let x = 10;
   let y = 5;
   console.log(x, y)
@@ -67,4 +67,46 @@ function sample() {
   x = 1; //automatically go up to scope chain (nested functions) if the variable is not found it will create a variable on the window obj
   var x; //create a variable inside the function, this will not exist outside of function; if created outside function this will go to window obj
   let a; const b=2; // both creates a block level element/scope but const will not let you change value
+}
+
+//Datatypes
+// Primitive: immutable and cannot be changed (string, undefined, integer, null, boolean)
+{
+  /*
+    Two main categories of data types:
+    primitives and objects
+  */
+
+  let x = 5; 
+  let b = "10";
+  x = x + b;
+  console.log(x)
+}
+
+// Object: can be changed {key:value}
+let person = {
+  name: 'Angie',
+  age: '23',
+  favFruit: 'watermelon', 
+  createFunction: function() { //this is a function method
+    console.log('yey!');
+  }
+}
+console.log(person.age)
+person.createFunction();
+
+let now = new Date();
+console.log(now)
+
+let grades = [30, 20, 10];
+console.log(grades);
+console.log(grades[1])
+
+{
+  let myName = 'Angie';
+  myNewName = myName.toUpperCase();
+  console.log(
+    'Old name = ',myName,
+    'new name = ',myNewName
+  )
 }
