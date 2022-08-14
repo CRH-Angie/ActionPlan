@@ -36,5 +36,35 @@ document.getElementById('button').onclick = function(){
   document.getElementById('button').style.display='none';
 }
 
+
+// javascript: alert(‘hello world’) //run in web console
+// REPL (read, evaluate, print, loop) 
 // var username = prompt();
 // console.log(username)
+(function() { 
+  //IIFE = Immediately Invoked Function Expression
+  //this is a sample of encapsulation
+  // not adding the 'var' keyword will make the variable global
+  var age = 24;
+}());
+
+//this is an easier way of creating IIFE
+{
+  let x = 10;
+  let y = 5;
+  console.log(x, y)
+  { //nested block
+    let y = 4;
+    console.log(y)
+  }
+
+  var z= 100; //using var will still be accessed outside block element {}
+}
+console.log(window.z)
+
+
+function sample() {
+  x = 1; //automatically go up to scope chain (nested functions) if the variable is not found it will create a variable on the window obj
+  var x; //create a variable inside the function, this will not exist outside of function; if created outside function this will go to window obj
+  let a; const b=2; // both creates a block level element/scope but const will not let you change value
+}
