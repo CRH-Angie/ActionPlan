@@ -43,32 +43,14 @@ Steven is still building his tip calculator, using the same rules as before: tip
 
 Test Data: 125, 555 and 44
 */
-const tips = [];
-const bills = [125, 555, 44];
-const total = []
+const bills = [125, 525, 44];
 
 const calcTip = function (anyVal) {
-    let tip;
-    if (anyVal>= 50 && anyVal<=300) {
-        tip = anyVal * (15 / 100);
-        tips.push(tip)
-        total.push(anyVal+tip);
-        return tip
-    } else {
-        tip =  anyVal * (20 / 100);
-        tips.push(tip);
-        total.push(anyVal+tip);
-
-        return tip;
-    }
+    return anyVal>= 50 && anyVal<=300 ? anyVal * 0.15 : anyVal * 0.20;
 }
-
-console.log(calcTip(bills[0]));
-console.log(calcTip(bills[1]));
-console.log(calcTip(bills[2]));
-
-console.log(tips);
-console.log(total);
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+console.log(total)
 
 // Challenge
 // "Jonas has 3 friends, and his best friend is called Michael"
@@ -130,3 +112,38 @@ const john = {
     }
 }
 console.log(`${mark.calcBMI() > john.calcBMI() ? (mark.firstName +" "+ mark.lastName) : (john.firstName +" "+ john.lastName)}'s BMI (${mark.calcBMI() > john.calcBMI() ? mark.calcBMI() : john.calcBMI()}) is higher than ${mark.calcBMI() > john.calcBMI() ? (john.firstName +" "+ john.lastName): (mark.firstName +" "+ mark.lastName)}'s BMI (${mark.calcBMI() > john.calcBMI() ? john.calcBMI() : mark.calcBMI()})!`)
+
+// Coding Challenge #4
+/*
+Let's improve Steven's tip calculator even more, this time using loops!
+
+1. Create an array 'bills' containing all 10 test bill values
+2. Create empty arrays for the tips and the totals ('tips' and 'totals')
+3. Use the 'calcTip' function we wrote before (no need to repeat) to calculate tips and total values (bill+tip) for every bill value in the bills array. Use a for loop to perform the 10 calculations!
+
+Test Data: 22, 295,176, 440,37, 105, 10, 1100, 86, 52
+
+Bonus: Write a function 'calcAverage' which takes an array called 'arr' as an argument. This function calculates the average of all numbers in the given array. This is a DIFFICULT challenge (we haven't done this before)! 
+*/
+const bills2 = [22, 295,176, 440,37, 105, 10, 1100, 86, 52];
+const tips2 = [], totals2 = [];
+
+const calcTip2 = function (anyVal) {
+    return anyVal>= 50 && anyVal<=300 ? anyVal * 0.15 : anyVal * 0.20;
+}
+for (let i = 0; i < bills2.length; i++) {
+    const tip = calcTip2(bills2[i])
+    tips2.push(tip);
+    totals2.push(tip + bills2[i]);
+}
+console.log(tips2, totals2)
+
+const calcAverage2 = function (arr) {
+    let sum = 0;
+    for(i=0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
+
+console.log(calcAverage2(totals2))
