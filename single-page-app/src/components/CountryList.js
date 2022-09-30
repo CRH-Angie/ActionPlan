@@ -5,28 +5,56 @@ import Pagination from "./Pagination";
 export default function CountryList() {
   const [countryList, setCountryList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [activeLink, setActiveLink] = useState(0);
+  const [activeLink, setActiveLink] = useState('Afghanistan');
 
   const [currentPage, setCurrentPage] = useState(2);
   const [postsPerPage] = useState(20);
+  // const { cntry } = useParams();
+  // console.log('cntrys',cntry);
 
   function fetchCountryList() {
     fetch("https://restcountries.com/v3.1/all")
       .then((res) => res.json())
       .then((data) => {
-        setCountryList(data);
+        const result = data.sort((a, b) => a.name.common.localeCompare(b.name.common))
+        setCountryList(result);
         setIsLoading(false);
       });
   }
+  // console.log('countryList',countryList);
 
   useEffect(() => {
     fetchCountryList();
   }, []);
 
+  const url = window.location.href.split('/');
+  useEffect(() => {
+    if (url[4]) {
+        // console.log('url:',url[4]);
+        setActiveLink(url[4])
+      }
+  }, []);
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = countryList.slice(indexOfFirstPost, indexOfLastPost);
   const howManyPages = Math.ceil(countryList.length / postsPerPage);
+
+
+  // const queryParams = new URLSearchParams(window.location.search)
+  // const page = queryParams.get("page");
+// console.log(queryParams)
+  // const postsMap = currentPosts.map((item) => {return (item.name)})
+  // console.log('postsMap',postsMap);
+  // if (page) {
+  //   // const filteredRes = currentPosts.filter(currentPosts)
+  //   // console.log('filteredRes',filteredRes)
+  // } 
+
+  // console.log('activeLink',activeLink);
+  // if (url[4] !== activeLink) {
+  //   console.log('url:',url[4]);
+  //   setActiveLink(url[4])
+  // }
 
   if (isLoading) {
     return (
@@ -38,17 +66,16 @@ export default function CountryList() {
     return (
       <div className="country--list">
         <h2>Countries List</h2>
-
         <ul>
           {currentPosts.map((item, index) => (
+            // console.log('url:',url[4])
             <li
               key={index}
-              className={`${activeLink === index ? "active" : ""}`}
+              className={`${activeLink === item.name.common ? "active" : ""}`}
             >
               <Link
-                className={`${activeLink === index ? "active" : ""}`}
                 to={`/country/${item.name.common}`}
-                onClick={() => setActiveLink(index)}
+                onClick={() => setActiveLink(item.name.common)}
               >
                 {item.name.common}
               </Link>

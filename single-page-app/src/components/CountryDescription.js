@@ -3,21 +3,33 @@ import { useParams } from "react-router-dom";
 
 export default function CountryDescription() {
   const [countryDescription, setCountryDescription] = useState([]);
+  const [countrySummary, setCountrySummary] = useState([])
   const [isLoading, setIsLoading] = useState(true);
-  const { cntry } = useParams();
+  let { cntry } = useParams();
+
+  if(!cntry ) cntry = 'Afghanistan';
 
   function fetchCountryDescription() {
-    fetch(`https://restcountries.com/v2/name/kuwait`)
-      .then((res) => res.json())
-      .then((data) => {
-        setCountryDescription(data);
-        setIsLoading(false);
-      });
-    console.log("cntry", cntry);
+    fetch(`https://restcountries.com/v3.1/name/${cntry}`)
+    .then((res) => res.json())
+    .then((data) => {
+      setCountryDescription(data);
+      setIsLoading(false);
+    });
+  }
+
+  function fetchCountrySummary() {
+    fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${cntry}`)
+    .then(res => res.json())
+    .then(data => {
+      setCountrySummary(data.extract);
+    })
   }
   useEffect(() => {
+    fetchCountrySummary();
     fetchCountryDescription();
   }, [cntry]);
+  
   if (isLoading) {
     return (
       <>
@@ -26,23 +38,27 @@ export default function CountryDescription() {
         </div>
       </>
     );
-  } else {
-    return (
-      <>
-        <div className="country--description">
-          <h2>Country</h2>
-          <h3>{cntry}</h3>
-          {countryDescription.map((item, index) => {
-            return (
-              // <figure>
-              //     {/* <img src={item.flags.svg} alt={item.name} /> */}
-              //     <figcaption>{item.name}</figcaption>
-              // </figure>
-              <h3 key={index}>{item.name}</h3>
-            );
-          })}
-        </div>
-      </>
-    );
-  }
+  } 
+  return (
+    <>
+      <div className="country--description">
+        <h2>Country</h2>
+        {countryDescription.map((item, index) => (
+          <div key={index}>
+          <figure>
+            <img src={item.flags.svg ? item.flags.svg : item.flags.png}/>
+            <figcaption></figcaption>
+          </figure>
+          <h3>{item.name.common}</h3>
+          <div className="country--summary">
+            <div className="summary">
+              {countrySummary}
+            </div>
+            <a href={`https://en.wikipedia.org/api/rest_v1/page/html/${cntry}`} target="_blank" className="readmore">Read More >></a>
+          </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 }

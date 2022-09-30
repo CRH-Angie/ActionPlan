@@ -15,7 +15,7 @@ class App extends Component {
               <CountryDescription />
               <CountryDetails />
             <Routes>
-              <Route path="/" exact element={<CountryList />} />
+              <Route path="/:page" exact element={<CountryList />} />
               <Route path="/country/:cntry" exact element={<CountryDescription />} />
             </Routes>
           </div>

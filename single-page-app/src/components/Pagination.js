@@ -65,16 +65,16 @@ export default function Pagination({ pages = 7, setCurrentPage }) {
   return (
     <div className="pagination">
       <Link
-        to={() => setCurrentButton((prev) => (prev <= 1 ? prev : prev - 1))}
+        to={`/?page=${currentButton <= 1 ? currentButton : currentButton - 1}`}
         className={`${currentButton === 1 ? "disabled" : ""}`}
         onClick={() =>
-          setCurrentButton((prev) => (prev <= 1 ? prev : prev - 1))
+          setCurrentButton((currentButton) => (currentButton <= 1 ? currentButton : currentButton - 1))
         }
       >{`<`}</Link>
       {arrOfCurrentButtons.map((item, index) => {
         return (
           <Link
-            to={`/pg${index + 1}`}
+            to={`/?page=${item}`}
             key={index}
             className={`${currentButton === item ? "active" : ""}`}
             onClick={() => setCurrentButton(item)}
@@ -84,13 +84,13 @@ export default function Pagination({ pages = 7, setCurrentPage }) {
         );
       })}
       <Link
-        to="#"
+        to={`/?page=${currentButton === numberOfPages.length ? currentButton : currentButton + 1}`}
         className={`${
           currentButton === numberOfPages.length ? "disabled" : ""
         }`}
         onClick={() =>
-          setCurrentButton((prev) =>
-            prev >= numberOfPages.length ? prev : prev + 1
+          setCurrentButton((currentButton) =>
+            currentButton >= numberOfPages.length ? currentButton : currentButton + 1
           )
         }
       >{`>`}</Link>

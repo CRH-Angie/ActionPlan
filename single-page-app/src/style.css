@@ -1,3 +1,12 @@
+a.readmore {
+    font-size: 13px;
+    font-family: 'Inter';
+    text-align: right;
+    display: block;
+    margin: 30px;
+    text-decoration: none;
+    color: #6969d2;
+}
 .pagination {
     padding: 20px 0;
     text-align: center;
@@ -71,6 +80,28 @@
 .country--description {
     grid-column: 2;
     grid-row: 1;
+    text-align: center;
+    padding: 20px 30px;
+}
+.country--description h3 {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    color: #000000;
+}
+.country--description figure img {
+    width: 40%;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+}
+.summary {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    color: #000000;
 }
 .country--details {
     grid-column: 2;
