@@ -9,25 +9,28 @@ export default function CountryDescription() {
 
   if(!cntry ) cntry = 'Afghanistan';
 
-  function fetchCountryDescription() {
-    fetch(`https://restcountries.com/v3.1/name/${cntry}`)
-    .then((res) => res.json())
-    .then((data) => {
-      setCountryDescription(data);
-      setIsLoading(false);
-    });
-  }
-
-  function fetchCountrySummary() {
-    fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${cntry}`)
-    .then(res => res.json())
-    .then(data => {
-      setCountrySummary(data.extract);
-    })
-  }
   useEffect(() => {
-    fetchCountrySummary();
+    function fetchCountryDescription() {
+      fetch(`https://restcountries.com/v3.1/name/${cntry}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCountryDescription(data);
+        setIsLoading(false);
+      });
+    }
+
     fetchCountryDescription();
+  }, [cntry]);
+
+  useEffect(() => {
+    function fetchCountrySummary() {
+      fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${cntry}`)
+      .then(res => res.json())
+      .then(data => {
+        setCountrySummary(data.extract);
+      })
+    }
+    fetchCountrySummary();
   }, [cntry]);
   
   if (isLoading) {
@@ -43,10 +46,10 @@ export default function CountryDescription() {
     <>
       <div className="country--description">
         <h2>Country</h2>
-        {countryDescription.map((item, index) => (
+        {countryDescription.slice(0,1).map((item, index) => (
           <div key={index}>
           <figure>
-            <img src={item.flags.svg ? item.flags.svg : item.flags.png}/>
+            <img src={item.flags.svg ? item.flags.svg : item.flags.png} alt=""/>
             <figcaption></figcaption>
           </figure>
           <h3>{item.name.common}</h3>
@@ -54,7 +57,7 @@ export default function CountryDescription() {
             <div className="summary">
               {countrySummary}
             </div>
-            <a href={`https://en.wikipedia.org/api/rest_v1/page/html/${cntry}`} target="_blank" className="readmore">Read More >></a>
+            <a href={`https://en.wikipedia.org/api/rest_v1/page/html/${cntry}`} target="_blank" className="readmore" rel="noreferrer">Read More &gt;&gt;</a>
           </div>
           </div>
         ))}

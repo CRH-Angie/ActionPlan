@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 
 export default function CountryDetails() {
     const [countryDetails, setCountryDetails] = useState([]);
@@ -23,7 +22,6 @@ export default function CountryDetails() {
 
   useEffect(() => {
     if (cntry) {
-        // console.log('url:',cntry);
         cntry = url[4];
       }
   }, []);
