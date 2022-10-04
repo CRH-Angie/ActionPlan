@@ -11,10 +11,12 @@ BMI=mass/height**2 or BMI=mass/(height * height).
 TEST DATA 1: Marks weights 78kg and is 1.69m tall. John weights 92kg and 1.95m tall.
 TEST DATA 2: Marks weights 95kg and 1.88m tall. John weights 85kg and is 1.76m tall.
 */
-const markMass = 78, markHeight = 1.69;
-const johnMass = 92, johnHeight = 1.95;
+const markMass = 78,
+  markHeight = 1.69;
+const johnMass = 92,
+  johnHeight = 1.95;
 
-const markBMI = markMass / markHeight**2;
+const markBMI = markMass / markHeight ** 2;
 const johnBMI = johnMass / (johnHeight * johnHeight);
 
 const markHigherBMI = markBMI > johnBMI;
@@ -28,14 +30,14 @@ Use the BMI example from Challenge #1, and the code you already wrote, and impro
 
 1. Print a nice output to the console, saying who has the higher BMI. The message can be either "Mark's BMI is higher that John's!" or "John's BMI is higher that Mark's"
 2. Use a template literal to include the BMI values is the outputs. Example: "Mark's BMI (28.3) is higher than John's (23.9)!"
-*/ 
+*/
 console.log('🟩🗣🗣 Challenge #2 Result! 🌟');
 
 if (markHigherBMI) {
-    console.log(`Mark's BMI(${markBMI}) is higher than John's(${johnBMI})!`);
-    document.getElementById('challenge1Res').style.display = 'block';
+  console.log(`Mark's BMI(${markBMI}) is higher than John's(${johnBMI})!`);
+  document.getElementById('challenge1Res').style.display = 'block';
 } else {
-    console.log(`John's BMI(${johnBMI}) is higher than Mark's(${markBMI})!`);
+  console.log(`John's BMI(${johnBMI}) is higher than Mark's(${markBMI})!`);
 }
 
 //Coding Challenge #3
@@ -52,12 +54,18 @@ TEST DATA: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
 TEST DATA BONUS 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123.
 TEST DATA BONUS 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106.
 */
-const dolphinsScore1 = 97, dolphinsScore2 = 112, dolphinsScore3 = 101;
-const koalasScore1 = 109, koalasScore2 = 95, koalasScore3 = 106;
+const dolphinsScore1 = 97,
+  dolphinsScore2 = 112,
+  dolphinsScore3 = 101;
+const koalasScore1 = 109,
+  koalasScore2 = 95,
+  koalasScore3 = 106;
 const minScore = 100;
 
-const dolphinsAverage = Number((dolphinsScore1+dolphinsScore2+dolphinsScore3)/3);
-const koalasAverage = Number((koalasScore1+koalasScore2+koalasScore3)/3);
+const dolphinsAverage = Number(
+  (dolphinsScore1 + dolphinsScore2 + dolphinsScore3) / 3
+);
+const koalasAverage = Number((koalasScore1 + koalasScore2 + koalasScore3) / 3);
 
 console.log('🟩🗣🗣 Challenge #3 Result! 🌟');
 console.log(dolphinsAverage, koalasAverage);
@@ -66,43 +74,48 @@ if (dolphinsAverage > koalasAverage) console.log('Dolphins wins!');
 else if (dolphinsAverage === koalasAverage) console.log(`It's a draw!`);
 else console.log('Koalas wins!');
 
-if (dolphinsAverage === koalasAverage && koalasAverage >= minScore) console.log("Bonus 2: It's a draw! Both team wins a trophy!")
-else if(dolphinsAverage > koalasAverage && dolphinsAverage >= minScore) console.log('Bonus 1: Dolphins wins the trophy! 🏆');
-else if(koalasAverage > dolphinsAverage && koalasAverage >= minScore) console.log('Bonus 1: Koalas wins the trophy! 🏆');
+if (dolphinsAverage === koalasAverage && koalasAverage >= minScore)
+  console.log("Bonus 2: It's a draw! Both team wins a trophy!");
+else if (dolphinsAverage > koalasAverage && dolphinsAverage >= minScore)
+  console.log('Bonus 1: Dolphins wins the trophy! 🏆');
+else if (koalasAverage > dolphinsAverage && koalasAverage >= minScore)
+  console.log('Bonus 1: Koalas wins the trophy! 🏆');
 else console.log('Bonus 1: No Team wins!  🥺');
 
 // Switch to if-else
 
 const day = 'monday';
-switch(day) {
-    case 'monday':
-        console.log('Plan course structure');
-        console.log('Go to coding meetup');
-        break;
-    case 'tuesday':
-        console.log('Prepare theory videos');
-        break;
-    case 'wednesday':
-    case 'thursday':
-        console.log ('write code examples');
-        break;
-    case 'friday':
-        console.log('Record videos');
-        break;
-    case 'saturday':
-    case 'sunday':
-        console.log('Enjoy the weekend :D');
-        break;
-    default: console.log('Not a valid day!');
-}
-if (day === 'monday') {
+switch (day) {
+  case 'monday':
     console.log('Plan course structure');
     console.log('Go to coding meetup');
-} 
-else if (day === 'tuesday') console.log('Prepare theory videos');
-else if (day === 'wednesday' || day === 'thursday') console.log ('write code examples');
+    break;
+  case 'tuesday':
+    console.log('Prepare theory videos');
+    break;
+  case 'wednesday':
+  case 'thursday':
+    console.log('write code examples');
+    break;
+  case 'friday':
+    console.log('Record videos');
+    break;
+  case 'saturday':
+  case 'sunday':
+    console.log('Enjoy the weekend :D');
+    break;
+  default:
+    console.log('Not a valid day!');
+}
+if (day === 'monday') {
+  console.log('Plan course structure');
+  console.log('Go to coding meetup');
+} else if (day === 'tuesday') console.log('Prepare theory videos');
+else if (day === 'wednesday' || day === 'thursday')
+  console.log('write code examples');
 else if (day === 'friday') console.log('Record videos');
-else if (day === 'saturday' || day === 'sunday') console.log('Enjoy the weekend :D');
+else if (day === 'saturday' || day === 'sunday')
+  console.log('Enjoy the weekend :D');
 else console.log('Not a valid day!');
 
 //Coding Challenge #4
@@ -120,4 +133,10 @@ const tip = bill >= 50 && bill <= 300 ? 15 : 20;
 const totTip = bill * (tip / 100);
 const totVal = bill + totTip;
 
-console.log(`The bill was ${bill}, the tip was ${totTip}, and the total value was ${totVal}`)
+console.log(
+  `The bill was ${bill}, the tip was ${totTip}, and the total value was ${totVal}`
+);
+
+console.log('lastIndexOf');
+let fruits = ['apple', 'orange', 'apple', false, 'apple', 3, 'apple'];
+fruits.lastIndexOf('apple');
