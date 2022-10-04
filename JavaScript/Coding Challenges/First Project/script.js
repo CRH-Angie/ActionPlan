@@ -10,7 +10,7 @@ console.log(document.querySelector('.guess').value);
 document.querySelector('.guess').value = 23;
 */
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 
 document.querySelector('.check').addEventListener('click', function () {
@@ -54,9 +54,11 @@ Implement a game rest functionality, so that the player can make a new guest! He
 */
 
 document.querySelector('.again').addEventListener('click', function () {
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  score = 20;
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('body').style.width = '15rem';
-  document.querySelector('.score').textContent = 20;
+  document.querySelector('.score').textContent = score;
   document.querySelector('.number').textContent = '?';
   document.querySelector('.guess').value = '';
   document.querySelector('.message').textContent = 'Start Guessing...';
