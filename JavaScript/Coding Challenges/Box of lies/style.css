@@ -1,0 +1,102 @@
+h2 {
+  font-size: 62px;
+  text-align: center;
+}
+.container {
+  position: relative;
+}
+.modal {
+  background: #4c4cd9;
+  padding: 30px;
+  text-align: center;
+
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: calc(100% - 60px);
+  position: absolute;
+}
+.modal h3 {
+  font-size: 48px;
+  margin: 20px auto 30px;
+  color: #fff;
+}
+.modal-image {
+  height: 387px;
+}
+.buttons {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+button.show-answer {
+  display: block;
+  margin: 0;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button.close-modal {
+  padding: 0 50px;
+  display: block;
+  text-align: right;
+  margin: 0 0 0 auto;
+  font-size: 16px;
+  border: 0px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+.teams {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  left: 80%;
+  gap: 10px;
+}
+.hidden {
+  display: none;
+}
+ul {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(5, 1fr);
+
+  padding: 0;
+  background: #f0ecec;
+}
+li {
+  list-style: none;
+}
+.list-item {
+  text-align: center;
+  padding: 20px;
+  font-size: 50px;
+  font-weight: 700;
+  background-color: rgb(121, 141, 231);
+  background-image: url(images/box.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+}
+.list-item.selected {
+  background-image: url(images/open-box.png);
+  background-color: #4c4cd9;
+}
+.list-item:hover {
+  cursor: pointer;
+}
+.image {
+  display: none;
+}
+.image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Box of Lies (As a Team)</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <h2>Box of Lies (As a Team)</h2>
+
+        <h3 class="team1Out">Team 1 Score: <span>0</span></h3>
+        <h3 class="team2Out">Team 2 Score: <span>0</span></h3>
+        <ul class="list"></ul>
+        <div class="modal hidden">
+          <button class="close-modal">X</button>
+
+          <div class="modal-container">
+            <h3>Box of Lies (As a Team)</h3>
+            <img class="modal-image" src="images/question.webp" alt="" />
+            <div class="buttons">
+              <button class="show-answer">Show Answer</button>
+              <div class="teams">
+                <button class="team1">Team 1 Score: <span>0</span></button>
+                <button class="team2">Team 2 Score: <span>0</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="overlay hidden"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
