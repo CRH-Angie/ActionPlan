@@ -48,15 +48,19 @@ let btnCloseModal = document.querySelector('.close-modal');
 let count;
 
 listItem.forEach((list, i) => {
-  list.addEventListener('click', function () {
+  list.addEventListener('click', function (e) {
     count = i + 1;
     modal.classList.remove('hidden');
+    // const path = e.path[0].classList[1];
+    console.log(e.target);
 
     btnShowAnswer.addEventListener('click', function () {
+      // console.log(path);
+
       modalImage.src = `images/${count}.jpeg`;
       list.classList.add('selected');
 
-      document.querySelector(`.list${count}`);
+      // document.querySelector(`.list${count}`);
       //   document.querySelector(`.list${i}`).classList.add('selected');
       //   e.target.classList.add('selected');
     });
