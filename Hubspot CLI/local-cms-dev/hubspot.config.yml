@@ -1,0 +1,14 @@
+defaultPortal: local-cms-dev
+portals:
+  - name: local-cms-dev
+    portalId: 21279197
+    authType: personalaccesskey
+    auth:
+      tokenInfo:
+        accessToken: >-
+          COKd2PPKMBILAAUAAAAAAAwAQAIY3eOSCiCrhIcFKO7pDDIUtHPzbt6EMyySe8kpdMk8NEv0o9A6JgAABEEAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAPAAAAABEQhRwTwGqKLkuvTUpBwtrpnMXlskb-EoDbmExUgBaAA
+        expiresAt: '2022-11-25T11:04:43.494Z'
+    personalAccessKey: >-
+      CiQyMDIwMzEzOS0yMWZjLTQ2MDMtYjQzMy0wOGFjMzA3M2M5OTMQ3eOSChirhIcFKhkABeaRgjCTKgCd0VwBvWbTX6y0CovZkz9GSgNuYTE
+    sandboxAccountType: null
+    parentAccountId: null

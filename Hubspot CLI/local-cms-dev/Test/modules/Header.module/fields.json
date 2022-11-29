@@ -1,0 +1,31 @@
+[ {
+  "id" : "text",
+  "name" : "text",
+  "display_width" : null,
+  "label" : "Rich text field",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<h1>Hello, world!</h1>"
+}, {
+  "id" : "c91aa390-d9c7-792f-7102-30f8f5df3e2b",
+  "name" : "logo",
+  "display_width" : null,
+  "label" : "Logo",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://cdn2.hubspot.net/hubfs/21279197/Images/logo.svg",
+    "alt" : "Logo",
+    "loading" : "lazy",
+    "width" : 240,
+    "height" : 39,
+    "max_width" : 240,
+    "max_height" : 39
+  }
+} ]
